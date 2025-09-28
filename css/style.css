@@ -1,0 +1,241 @@
+:root {
+    --bg-color: #f0f4f8;
+    --card-bg-color: #ffffff;
+    --text-color: #121826;
+    --secondary-text-color: #6b7280;
+    --border-color: #e5e7eb;
+    --price-up-color: #16a34a;
+    --price-down-color: #dc2626;
+    --accent-color: #2563eb;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --bg-color: #121826;
+    --card-bg-color: #1a2233;
+    --text-color: #f0f4f8;
+    --secondary-text-color: #9aa5b9;
+    --border-color: #2c3a58;
+    --price-up-color: #22c55e;
+    --price-down-color: #ef4444;
+    --accent-color: #3b82f6;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+header {
+    background-color: var(--card-bg-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.theme-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    color: var(--secondary-text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.theme-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.theme-btn svg {
+    width: 20px;
+    height: 20px;
+}
+.moon { display: none; }
+body.dark .sun { display: none; }
+body.dark .moon { display: block; }
+
+main {
+    padding: 2rem 0;
+}
+
+.search-container {
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+#crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.coin-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: default;
+}
+
+.coin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.coin-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.coin-titles {
+    line-height: 1.2;
+}
+
+.coin-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.coin-symbol {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+}
+
+.coin-price {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.coin-change {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.price-up {
+    color: var(--price-up-color);
+}
+
+.price-down {
+    color: var(--price-down-color);
+}
+
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.market-cap-label {
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.25rem;
+}
+
+.market-cap {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-text-color);
+}
+
+.creator-credit {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 4rem auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
