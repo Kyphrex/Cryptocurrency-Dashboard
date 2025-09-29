@@ -36,7 +36,7 @@ Se quiser testar na sua máquina, é bem simples:
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/Kyphrex/Cryptocurrency-Dashboard.git](https://github.com/Kyphrex/Cryptocurrency-Dashboard.git)
+git clone https://github.com/Kyphrex/Cryptocurrency-Dashboard.git
 
 # 2. Entre na pasta do projeto
 cd Cryptocurrency-Dashboard
